@@ -1,10 +1,10 @@
 import React from 'react';
 
 const TextArea=(props)=>{
-
-    let state= props.textAreaPage;
-    let newTextAtea= state.newTextAtea;
+    const {newText}=props;
+    
     let onTextClick= ()=>{
+   
         props.addText();
     }
     let onTextChange=(e)=>{
@@ -15,9 +15,9 @@ const TextArea=(props)=>{
 
     return(
         <div>
-            <textarea value={newTextAtea}
+            <textarea value={newText}
             onChange={onTextChange}
-            placeholder='hhhhh'></textarea>
+            placeholder='hhhhh'/>
             <button onClick={onTextClick}>PUSH</button>
         </div>
     )
