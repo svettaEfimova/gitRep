@@ -1,6 +1,6 @@
-import TextArea from "./TextArea/TextArea";
+import TextArea from "./TextArea";
 import { connect } from "react-redux";
-import { addTextAC, pushButtonAC } from "../redux/text-reducer";
+import { addTextAC, pushButtonAC } from "../../redux/text-reducer";
 
 
 const mapStateToProps = (state) => {
