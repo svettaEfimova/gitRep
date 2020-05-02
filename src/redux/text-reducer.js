@@ -1,5 +1,4 @@
-const ADD_TEXT ='ADD_TEXT';
-const PUSH_BUTTON = 'PUSH_BUTTON'
+import types from './types'
 
 let initialState = {
     newText: 'uhfiuhdj'
@@ -7,25 +6,22 @@ let initialState = {
 
 const textAreaReducer = (state = initialState, action)=>{
     switch(action.type) {
-        case ADD_TEXT: {
+        case types.ADD_TEXT: {
             return{
                 ...state,
-                newText: ''
+                newText: action.newText
             }
         }
-        case PUSH_BUTTON: {
+        case types.PUSH_BUTTON: {
             return{
                 ...state,
-                newText: action.text
+                
             }
         }
             default:
                 return state
         }
     }
-
-export const addTextAC=()=>({type: ADD_TEXT})
-export const pushButtonAC=(text)=>({type: PUSH_BUTTON, text})
 
 
 

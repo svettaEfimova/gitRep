@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const TextArea=(props)=>{
-    const {newText}=props;
-    
-    let onTextClick= ()=>{
-   
-        props.addText();
+
+    const {newText, addText}=props;
+    const [stateText,setText] = useState(newText)
+
+    const onTextClick= ()=>{
+         addText(stateText);
+        
     }
-    let onTextChange=(e)=>{
+    const onTextChange=(e)=>{
         let text=e.target.value;
-        props.pushButton(text)
+        setText(text)
     }
 
 
     return(
         <div>
-            <textarea value={newText}
+            <textarea value={stateText}
             onChange={onTextChange}
             placeholder='hhhhh'/>
             <button onClick={onTextClick}>PUSH</button>

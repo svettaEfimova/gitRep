@@ -1,9 +1,12 @@
 import TextArea from "./TextArea";
 import { connect } from "react-redux";
-import { addTextAC, pushButtonAC } from "../../redux/text-reducer";
+
 import React from 'react';
-const TextAreaContainer=(props)=>{
-    return <TextArea newText={props.newText}/>
+import { bindActionCreators } from "redux";
+import { addTextAC } from "../../redux/action";
+
+const TextAreaContainer=(newText, addText)=>{
+    return <TextArea newText={newText} addText={addText}/>
 }
 
 const mapStateToProps = (state) => {
@@ -14,13 +17,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-       addText: (text) => {
-            let action = addTextAC(text);
-            dispatch(action);
-        },
-        pushButton: () => {
-            dispatch((pushButtonAC));
+     addText: bindActionCreators(addTextAC, dispatch)
         }
     }
-}
+
 export default  connect(mapStateToProps, mapDispatchToProps)(TextAreaContainer);
