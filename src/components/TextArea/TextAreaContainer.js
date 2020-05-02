@@ -5,7 +5,7 @@ import React from 'react';
 import { bindActionCreators } from "redux";
 import { addTextAC } from "../../redux/action";
 
-const TextAreaContainer=(newText, addText)=>{
+const TextAreaContainer=({newText, addText})=>{
     return <TextArea newText={newText} addText={addText}/>
 }
 
