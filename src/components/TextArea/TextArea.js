@@ -3,11 +3,11 @@ import {useSelector, useDispatch} from 'react-redux';
 import { addTextAC } from '../../redux/action';
 
 
-const TextArea=(props)=>{
+const TextArea=()=>{
 
     const dispatch = useDispatch();
     const storedText= useSelector(state=> state.textAreaPage.text);
-    const [stateText,setText] = useState(storedText)
+    const [stateText, setText] = useState(storedText)
 
    
     const onTextChange=(e)=>{

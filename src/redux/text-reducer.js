@@ -1,7 +1,7 @@
 import types from './types'
 
 let initialState = {
-    newText: 'uhfiuhdj'
+    text: 'uhfiuhdj'
 };
 
 const textAreaReducer = (state = initialState, action)=>{
