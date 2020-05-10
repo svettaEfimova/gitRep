@@ -4,7 +4,8 @@ import thunkMiddleware from 'redux-thunk'
 
 
 let reducers =combineReducers({
-    textAreaPage: textAreaReducer
+    textAreaPage: textAreaReducer,
+  
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware))

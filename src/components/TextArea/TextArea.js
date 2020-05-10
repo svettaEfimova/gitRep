@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import { addTextAC } from '../../redux/action';
+
 
 const TextArea=(props)=>{
 
-    const {newText, addText}=props;
-    const [stateText,setText] = useState(newText)
+    const dispatch = useDispatch();
+    const storedText= useSelector(state=> state.textAreaPage.text);
+    const [stateText,setText] = useState(storedText)
 
-    const onTextClick= ()=>{
-         addText(stateText);
-        
-    }
+   
     const onTextChange=(e)=>{
-        let text=e.target.value;
-        setText(text)
+        
+        setText(e.target.value)
     }
 
 
     return(
         <div>
-            <textarea value={stateText}
-            onChange={onTextChange}
-            placeholder='hhhhh'/>
-            <button onClick={onTextClick}>PUSH</button>
+            <textarea value={stateText} onChange={onTextChange} />
+            <button onClick={()=>dispatch(addTextAC(stateText))}>PUSH</button>
         </div>
     )
 }

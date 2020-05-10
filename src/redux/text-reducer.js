@@ -9,15 +9,10 @@ const textAreaReducer = (state = initialState, action)=>{
         case types.ADD_TEXT: {
             return{
                 ...state,
-                newText: action.newText
+                text: action.text
             }
         }
-        case types.PUSH_BUTTON: {
-            return{
-                ...state,
-                
-            }
-        }
+       
             default:
                 return state
         }
